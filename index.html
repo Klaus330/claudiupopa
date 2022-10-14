@@ -5,8 +5,113 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        .red{
+            color:red;
+        }
+
+        body{
+            font-family: cursor, monospace;
+            overflow-x: hidden;
+            color: #D2D1E5;
+            background-color: #2E3440;
+        }
+
+        pre{
+            font-size: 1rem;
+            margin:0;
+        }
+
+        pre:has(> span.mb)
+        {
+            margin-bottom: 1rem;
+        }
+
+        .highlight{
+            color: #88C0D0;
+        }
+
+        .commad-name{
+            color: #81A2C1;
+        }
+
+        a{
+            color: #B48EAD;
+            text-decoration: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+        .commad-description
+        {
+            color: #E5E9F1
+        }
+
+        .error-command{
+            color:#BF616A
+        }
+
+        #currentCommand.error {
+            color:#BF616A
+        }
+
+        #currentCommand.match{
+            color: #A3BE8C;
+        }
+
+        .guest{
+            color:#81A2C1;
+        }
+        
+        .host{
+            color: #EBCB8A;
+        }
+
+        ::-moz-selection { 
+            background-color: #3B4252; 
+            color: #fff; 
+        } 
+        ::selection { 
+            background-color: #3B4252; 
+            color: #fff; 
+        }
+
+        #cli{
+            font-family: cursor, monospace;
+            font-size: 1rem;
+            margin:0;
+        }
+        
+        .prefix{
+            margin-right: 0.3rem;
+        }
+
+        #currentCommand{
+            animation: blink 1s infinite;
+            border-right: 10px solid #E5E9F1;
+            margin: 0;
+        }
+
+    
+        @keyframes blink {
+            50%{
+                border-color: transparent;
+            }
+        }
+    </style>
 </head>
-<body>
-    <h1>Under construction.</h1>
+<body id="app">
+    <div id="output">
+
+    </div>
+    <p id="cli">
+        <span class="prefix"><span class="guest">guest</span><span class="at-symbol">@</span><span class="host">claudiupopa.ro</span><span class="path">:~</span></span>
+        <span id="currentCommand" class=""></span>
+    </p>
+
+    <script src="index.js" type="module"></script>
 </body>
 </html>
