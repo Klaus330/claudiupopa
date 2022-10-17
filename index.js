@@ -8,6 +8,34 @@ let command = "";
 let forbiddenKeys = ['escape', 'delete', 'home', 'end', 'insert', 'control', 'metakey', 'alt', 'shift', 'capslock', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'pageup', 'pagedown']
 let initialMessage = data.init
 
+let historyManager = {
+    commands: [],
+    manage: function () {
+        this.commands.push(command)
+        this.position = this.commands.length
+    },
+    position: 0,
+    previous: function() {
+        if (this.position - 1 < -1) {
+            return
+        }
+
+        if (this.position != 0) {
+            this.position--;
+        }
+
+        return this.commands[this.position]
+    },
+    next: function() {
+        if(this.position + 1 >= this.commands.length){
+            return
+        }
+
+        this.position++;
+        return this.commands[this.position]  
+    }
+}
+
 let commands = {
     ping: () => 'pong 🏓',
     claudiupopa: () => data.about,
@@ -28,10 +56,11 @@ let commands = {
             '<span class="commad-name">phone</span>          <span class="command-description">Wanna have a conversation?</span>',
             '<span class="commad-name">ping</span>           <span class="command-description">Pong</span>',
             '<span class="commad-name">banner</span>         <span class="command-description">Display my banner.</span>',
+            '<span class="commad-name">history</span>        <span class="command-description">See your commands history</span>',
             '<span class="commad-name">life</span>           <span class="command-description">It\'s ALIVEE!!!</span>',
             '<span class="commad-name">death</span>          <span class="command-description">Don\'t you dare to use this command!</span>',
             '<span class="commad-name">clear</span>          <span class="command-description">Clear the console.</span>',
-            '<span class="commad-name">exit</span>          <span class="command-description">See ya later!</span>',
+            '<span class="commad-name">exit</span>           <span class="command-description">See ya later!</span>',
         ]
     },
     whoami: () => data.whoami,
@@ -72,7 +101,8 @@ let commands = {
         }, 600)
 
         return "👋 Bye!"
-    }
+    },
+    history: () => historyManager.commands
 }
 
 function specialTyping(e)
@@ -109,6 +139,7 @@ function specialTyping(e)
 
     if (key == 'enter') {
         if(command !== ""){
+            historyManager.manage()
             runCommand(command)
             render()
         }else{
@@ -119,6 +150,20 @@ function specialTyping(e)
         cliElement.scrollIntoView()
         return;
     }
+
+    if(key === 'arrowup')
+    {
+        command = historyManager.previous() ?? command
+        render()
+        return;
+    } 
+
+    if(key === 'arrowdown')
+    {
+        command = historyManager.next() ?? command
+        render()
+        return;
+    } 
 
     if(key === 'c' && e.ctrlKey)
     {

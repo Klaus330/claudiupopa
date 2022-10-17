@@ -108,7 +108,6 @@ function draw()
 
     let next = make2DArray(cols, rows)
     next = computeNextGeneration(grid, next)
-
     grid = next
 }
 
