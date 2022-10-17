@@ -55,7 +55,7 @@ let commands = {
             '<span class="commad-name"  x-data @click="runCommand(`email`)">email</span>          <span class="command-description">Send me an email.</span>',
             '<span class="commad-name"  x-data @click="runCommand(`phone`)">phone</span>          <span class="command-description">Wanna have a conversation?</span>',
             '<span class="commad-name"  x-data @click="runCommand(`ping`)">ping</span>           <span class="command-description">Pong</span>',
-            '<span class="commad-name"  x-data @click="runCommand(`banner`)">banner</span>         <span class="command-description">Display my banner.</span>',
+            '<span class="commad-name mobile-hidden"  x-data @click="runCommand(`banner`)">banner</span>         <span class="command-description">Display my banner.</span>',
             '<span class="commad-name"  x-data @click="runCommand(`history`)">history</span>        <span class="command-description">See your commands history</span>',
             '<span class="commad-name"  x-data @click="runCommand(`life`)">life</span>           <span class="command-description">It\'s ALIVEE!!!</span>',
             '<span class="commad-name"  x-data @click="runCommand(`death`)">death</span>          <span class="command-description">Don\'t you dare to use this command!</span>',
