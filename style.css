@@ -9,17 +9,6 @@ body{
     background-color: #2E3440;
 }
 
-@media (min-width: 1270px) {
-    body{
-        overflow-y: hidden;
-    }
-
-    .mobile-hidden{
-        display: block;
-    }
-}
-
-
 body > *{
     z-index: 1;
 }
@@ -135,4 +124,14 @@ a:hover{
 
 .mobile-hidden{
     display: none;
+}
+
+@media (min-width: 1270px) {
+    body{
+        overflow-y: hidden;
+    }
+
+    .mobile-hidden{
+        display: block;
+    }
 }
