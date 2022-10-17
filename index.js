@@ -71,7 +71,7 @@ let commands = {
             window.close()
         }, 600)
 
-        return "Bye!"
+        return "👋 Bye!"
     }
 }
 
