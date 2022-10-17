@@ -6,7 +6,7 @@ let commandElement = document.getElementById('currentCommand');
 let outputElement = document.getElementById('output')
 let command = "";
 let forbiddenKeys = ['escape', 'delete', 'home', 'end', 'insert', 'control', 'metakey', 'alt', 'shift', 'capslock', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'pageup', 'pagedown']
-let initialMessage = data.init
+let initialMessage = navigator.userAgentData.mobile ? data.initMobile : data.initDesktop
 
 let historyManager = {
     commands: [],
@@ -47,20 +47,20 @@ let commands = {
     },
     help: () => {
         return [
-            '<span class="commad-name">claudiupopa</span>    <span class="command-description">Who is Claudiu?</span>',
-            '<span class="commad-name">whoami</span>         <span class="command-description">Who are you?</span>',
-            '<span class="commad-name">projects</span>       <span class="command-description">See my projects.</span>',
-            `<span class='commad-name'>party</span>          <span class="command-description">Let's get this party started.</span>`,
-            '<span class="commad-name">social</span>         <span class="command-description">Display social network.</span>',
-            '<span class="commad-name">email</span>          <span class="command-description">Send me an email.</span>',
-            '<span class="commad-name">phone</span>          <span class="command-description">Wanna have a conversation?</span>',
-            '<span class="commad-name">ping</span>           <span class="command-description">Pong</span>',
-            '<span class="commad-name">banner</span>         <span class="command-description">Display my banner.</span>',
-            '<span class="commad-name">history</span>        <span class="command-description">See your commands history</span>',
-            '<span class="commad-name">life</span>           <span class="command-description">It\'s ALIVEE!!!</span>',
-            '<span class="commad-name">death</span>          <span class="command-description">Don\'t you dare to use this command!</span>',
-            '<span class="commad-name">clear</span>          <span class="command-description">Clear the console.</span>',
-            '<span class="commad-name">exit</span>           <span class="command-description">See ya later!</span>',
+            '<span class="commad-name" x-data @click="runCommand(`claudiupopa`)">claudiupopa</span>    <span class="command-description">Who is Claudiu?</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`whoami`)">whoami</span>         <span class="command-description">Who are you?</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`projects`)">projects</span>       <span class="command-description">See my projects.</span>',
+            `<span class='commad-name'  x-data @click="runCommand('party')">party</span>          <span class="command-description">Let's get this party started.</span>`,
+            '<span class="commad-name"  x-data @click="runCommand(`social`)">social</span>         <span class="command-description">Display social network.</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`email`)">email</span>          <span class="command-description">Send me an email.</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`phone`)">phone</span>          <span class="command-description">Wanna have a conversation?</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`ping`)">ping</span>           <span class="command-description">Pong</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`banner`)">banner</span>         <span class="command-description">Display my banner.</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`history`)">history</span>        <span class="command-description">See your commands history</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`life`)">life</span>           <span class="command-description">It\'s ALIVEE!!!</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`heath`)">death</span>          <span class="command-description">Don\'t you dare to use this command!</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`clear`)">clear</span>          <span class="command-description">Clear the console.</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`exit`)">exit</span>           <span class="command-description">See ya later!</span>',
         ]
     },
     whoami: () => data.whoami,
@@ -227,9 +227,11 @@ function runCommand(cmd)
     if (cmds.includes(cmd.trim()))
     {
         output(commands[cmd]())
+        cliElement.scrollIntoView()
         return
     }else{
         output(`<span class="error-command">${cmd}</span>: command not found. Use '<span class='highlight'>help</span>' to see the list of available commands.`)
+        cliElement.scrollIntoView()
     }
 }
 
@@ -300,3 +302,4 @@ function addSpaces(text)
 
 document.getElementById('app').addEventListener('keydown', specialTyping)
 output(initialMessage)
+window.runCommand = runCommand

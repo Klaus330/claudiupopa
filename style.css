@@ -4,10 +4,17 @@
 
 body{
     font-family: cursor, monospace;
-    overflow: hidden;
+    overflow-x: hidden;
     color: #D2D1E5;
     background-color: #2E3440;
 }
+
+@media (min-width: 1270px) {
+    body{
+        overflow-y: hidden;
+    }
+}
+
 
 body > *{
     z-index: 1;
@@ -16,6 +23,7 @@ body > *{
 pre{
     font-size: 1rem;
     margin:0;
+    white-space: pre-wrap;
 }
 
 pre:has(> span.mb)
@@ -115,4 +123,8 @@ a:hover{
     width: 100%;
     height: 100vh;
     z-index: -1;
+}
+
+.hidden{
+    display: none;
 }

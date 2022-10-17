@@ -14,12 +14,12 @@
     <div id="output">
 
     </div>
-    <p id="cli">
+    <p id="cli" x-data @click="runCommand('help')">
         <span class="prefix"><span class="guest">guest</span><span class="at-symbol">@</span><span class="host">claudiupopa.ro</span><span class="path">:~</span></span>
         <span id="currentCommand" class=""></span>
     </p>
 
-    <div class="overlay"></div>
+    <div class="overlay hidden" id="overlay"></div>
     <div id="game-of-life"></div>
 
     <script src="gameoflife.js" defer></script>

@@ -101,7 +101,7 @@ function draw()
         return;
     }
 
-    frameRate(30);
+    frameRate(24);
     smooth();
     background(46, 52, 64)
     drawGrid(grid)
@@ -112,6 +112,7 @@ function draw()
 }
 
 document.addEventListener('startgameoflife', () => { 
+    document.getElementById('overlay').classList.remove('hidden')
     grid = make2DArray(cols, rows)
     generateRandomGrid()
 
@@ -119,6 +120,7 @@ document.addEventListener('startgameoflife', () => {
 })
 
 document.addEventListener('stopgameoflife', () => { 
+    document.getElementById('overlay').classList.add('hidden')
     startGame = false;
     background(46, 52, 64)
 })
