@@ -28,7 +28,10 @@ let commands = {
             '<span class="commad-name">phone</span>          <span class="command-description">Wanna have a conversation?</span>',
             '<span class="commad-name">ping</span>           <span class="command-description">Pong</span>',
             '<span class="commad-name">banner</span>         <span class="command-description">Display my banner.</span>',
+            '<span class="commad-name">life</span>           <span class="command-description">It\'s ALIVEE!!!</span>',
+            '<span class="commad-name">death</span>          <span class="command-description">Don\'t you dare to use this command!</span>',
             '<span class="commad-name">clear</span>          <span class="command-description">Clear the console.</span>',
+            '<span class="commad-name">exit</span>          <span class="command-description">See ya later!</span>',
         ]
     },
     whoami: () => data.whoami,
@@ -47,7 +50,29 @@ let commands = {
     },
     projects: () => '👨‍💻 Still curating... most projects are offline, on GitHub, or confidential.',
     social: () => data.social,
-    party: () => `🎉🎉🎉\n ${data.party}\n\n🎉🎉🎉`
+    party: () => `🎉🎉🎉\n ${data.party}\n\n🎉🎉🎉`,
+    life: () => {
+        setTimeout(() => {
+            document.dispatchEvent(new CustomEvent('startgameoflife'))
+        }, 300)
+        
+        return "This is an implementation of John Conway's Game of Life. Enjoy!"
+    },
+    death: () => {
+        setTimeout(() => {
+            document.dispatchEvent(new CustomEvent('stopgameoflife'))
+        })
+
+        return "😢 You killed all of them! You nasty animal!!"
+    },
+
+    exit: () => {
+        setTimeout(() => {
+            window.close()
+        }, 600)
+
+        return "Bye!"
+    }
 }
 
 function specialTyping(e)

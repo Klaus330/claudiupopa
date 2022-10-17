@@ -4,104 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.svg">
+    <link rel="stylesheet" href="./style.css">
+    <title>Claudiu Popa - terminal webiste version</title>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <style>
-        .red{
-            color:red;
-        }
-
-        body{
-            font-family: cursor, monospace;
-            overflow-x: hidden;
-            color: #D2D1E5;
-            background-color: #2E3440;
-        }
-
-        pre{
-            font-size: 1rem;
-            margin:0;
-        }
-
-        pre:has(> span.mb)
-        {
-            margin-bottom: 1rem;
-        }
-
-        .highlight{
-            color: #88C0D0;
-        }
-
-        .commad-name{
-            color: #81A2C1;
-        }
-
-        a{
-            color: #B48EAD;
-            text-decoration: none;
-        }
-
-        a:hover{
-            text-decoration: underline;
-        }
-
-        .commad-description
-        {
-            color: #E5E9F1
-        }
-
-        .error-command{
-            color:#BF616A
-        }
-
-        #currentCommand.error {
-            color:#BF616A
-        }
-
-        #currentCommand.match{
-            color: #A3BE8C;
-        }
-
-        .guest{
-            color:#81A2C1;
-        }
-        
-        .host{
-            color: #EBCB8A;
-        }
-
-        ::-moz-selection { 
-            background-color: #3B4252; 
-            color: #fff; 
-        } 
-        ::selection { 
-            background-color: #3B4252; 
-            color: #fff; 
-        }
-
-        #cli{
-            font-family: cursor, monospace;
-            font-size: 1rem;
-            margin:0;
-        }
-        
-        .prefix{
-            margin-right: 0.3rem;
-        }
-
-        #currentCommand{
-            animation: blink 1s infinite;
-            border-right: 10px solid #E5E9F1;
-            margin: 0;
-        }
-
-    
-        @keyframes blink {
-            50%{
-                border-color: transparent;
-            }
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js" integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body id="app">
     <div id="output">
@@ -112,6 +19,10 @@
         <span id="currentCommand" class=""></span>
     </p>
 
+    <div class="overlay"></div>
+    <div id="game-of-life"></div>
+
+    <script src="gameoflife.js" defer></script>
     <script src="index.js" type="module"></script>
 </body>
 </html>

@@ -1,0 +1,118 @@
+.red{
+    color:red;
+}
+
+body{
+    font-family: cursor, monospace;
+    overflow: hidden;
+    color: #D2D1E5;
+    background-color: #2E3440;
+}
+
+body > *{
+    z-index: 1;
+}
+
+pre{
+    font-size: 1rem;
+    margin:0;
+}
+
+pre:has(> span.mb)
+{
+    margin-bottom: 1rem;
+}
+
+.highlight{
+    color: #88C0D0;
+}
+
+.commad-name{
+    color: #81A2C1;
+}
+
+a{
+    color: #B48EAD;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.commad-description
+{
+    color: #E5E9F1
+}
+
+.error-command{
+    color:#BF616A
+}
+
+#currentCommand.error {
+    color:#BF616A
+}
+
+#currentCommand.match{
+    color: #A3BE8C;
+}
+
+.guest{
+    color:#81A2C1;
+}
+
+.host{
+    color: #EBCB8A;
+}
+
+::-moz-selection { 
+    background-color: #3B4252; 
+    color: #fff; 
+} 
+::selection { 
+    background-color: #3B4252; 
+    color: #fff; 
+}
+
+#cli{
+    font-family: cursor, monospace;
+    font-size: 1rem;
+    margin:0;
+}
+
+.prefix{
+    margin-right: 0.3rem;
+}
+
+#currentCommand{
+    animation: blink 1s infinite;
+    border-right: 10px solid #E5E9F1;
+    margin: 0;
+}
+
+
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }
+}
+
+#game-of-life{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #2E3440;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
