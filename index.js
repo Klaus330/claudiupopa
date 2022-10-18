@@ -59,8 +59,13 @@ let commands = {
             '<span class="commad-name"  x-data @click="runCommand(`history`)">history</span>        <span class="command-description">See your commands history</span>',
             '<span class="commad-name"  x-data @click="runCommand(`life`)">life</span>           <span class="command-description">It\'s ALIVEE!!!</span>',
             '<span class="commad-name"  x-data @click="runCommand(`death`)">death</span>          <span class="command-description">Don\'t you dare to use this command!</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`manual`)">manual</span>         <span class="command-description">See the manual.</span>',
             '<span class="commad-name"  x-data @click="runCommand(`clear`)">clear</span>          <span class="command-description">Clear the console.</span>',
             '<span class="commad-name"  x-data @click="runCommand(`exit`)">exit</span>           <span class="command-description">See ya later!</span>',
+            '<span class="commad-name"">[tab]</span>          <span class="command-description">Trigger completion.</span>',
+            '<span class="commad-name"">[ctrl+l]</span>       <span class="command-description">Clear terminal.</span>',
+            '<span class="commad-name"">[ctrl+c]</span>       <span class="command-description">Cancel commmand.</span>',
+            '<span class="commad-name"">[ctrl+d]</span>       <span class="command-description">Start drawing.</span>',
         ]
     },
     whoami: () => data.whoami,
@@ -114,7 +119,21 @@ let commands = {
 
         return "👋 Bye!"
     },
-    history: () => historyManager.commands
+    history: () => historyManager.commands,
+    man: (command) => {
+        let argument = command.split(' ')[1].trim()
+        console.log(argument)
+        if (argument === undefined)
+        {
+            return `Usage: man COMMAND`
+        }
+
+        if (data.man[argument] === undefined) {
+            return `Manual for ${argument} not found.`
+        }
+
+        return `COMMAND: ${argument}${data.man[argument]}`
+    }
 }
 
 function specialTyping(e)
@@ -236,15 +255,17 @@ function backspace()
     command = command.slice(0, -1)
 }
 
-function runCommand(cmd)
+function runCommand(line)
 {
-    renderCommandLine(cmd)
+    renderCommandLine(line)
 
     let cmds = Object.keys(commands)
+    
+    let cmd = line.split(' ')[0].trim()
 
     if (cmds.includes(cmd.trim()))
     {
-        output(commands[cmd]())
+        output(commands[cmd](line))
         cliElement.scrollIntoView()
         return
     }else{

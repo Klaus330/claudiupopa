@@ -26,10 +26,12 @@ pre:has(> span.mb)
 
 .highlight{
     color: #88C0D0;
+    cursor: pointer;
 }
 
 .commad-name{
     color: #81A2C1;
+    cursor: pointer;
 }
 
 a{
