@@ -120,6 +120,37 @@ a:hover{
     z-index: -1;
 }
 
+.controls{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 0.5rem;
+    list-style-type: none;
+    background-color: #D2D1E5;
+
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    border-radius: 5px;
+}
+
+controls .controls-item 
+{
+    cursor: pointer;
+}
+
+.controls .controls-item img{
+    width: 20px;
+    cursor: pointer;
+    height: 20px;
+}
+
+.controls .controls-item img:hover{
+    filter: contrast(10%)
+}
+
 .hidden{
     display: none;
 }

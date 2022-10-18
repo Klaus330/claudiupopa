@@ -21,6 +21,13 @@
         </p>
     </div>
 
+    <ul class="controls hidden" id="game-controls">
+        <li class="controls-item" x-data @click="resumeGame()"><img src="./controls/play.svg" alt="resume"></li>
+        <li class="controls-item" x-data @click="pauseGame()"><img src="./controls/pause.svg" alt="pause"></li>
+        <li class="controls-item" x-data @click="step()"><img src="./controls/step.svg" alt="step"></li>
+        <li class="controls-item" x-data @click="document.dispatchEvent(new CustomEvent(`stopgameoflife`))"><img src="./controls/close.svg" alt="close"></li>
+    </ul>
+    
     <div class="overlay hidden" id="overlay"></div>
     <div id="game-of-life"></div>
 

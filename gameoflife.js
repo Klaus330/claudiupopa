@@ -102,6 +102,15 @@ function countNeighbours(grid, x, y)
     return sum
 }
 
+function step()
+{
+    drawGrid(grid)
+
+    let next = make2DArray(cols, rows)
+    next = computeNextGeneration(grid, next)
+    grid = next
+}
+
 function draw()
 {
     if(drawing)
@@ -118,15 +127,24 @@ function draw()
     frameRate(24);
     smooth();
     background(46, 52, 64)
-    drawGrid(grid)
 
-    let next = make2DArray(cols, rows)
-    next = computeNextGeneration(grid, next)
-    grid = next
+    step()
+}
+
+
+function pauseGame()
+{
+    startGame = false
+}
+
+function resumeGame()
+{
+    startGame = true
 }
 
 document.addEventListener('startgameoflife', () => { 
     document.getElementById('overlay').classList.remove('hidden')
+    document.getElementById('game-controls').classList.remove('hidden')
     
     if (!drawn) {
         grid = make2DArray(cols, rows)
@@ -140,6 +158,8 @@ document.addEventListener('startgameoflife', () => {
 
 document.addEventListener('stopgameoflife', () => { 
     document.getElementById('overlay').classList.add('hidden')
+    document.getElementById('game-controls').classList.add('hidden')
+    
     startGame = false;
     drawn = false
     drawing = false
