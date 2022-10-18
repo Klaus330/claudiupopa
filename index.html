@@ -11,13 +11,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js" integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body id="app">
-    <div id="output">
+    <div id="terminal">
+        <div id="output">
 
+        </div>
+        <p id="cli" x-data @click="runCommand('help')">
+            <span class="prefix"><span class="guest">guest</span><span class="at-symbol">@</span><span class="host">claudiupopa.ro</span><span class="path">:~</span></span>
+            <span id="currentCommand" class=""></span>
+        </p>
     </div>
-    <p id="cli" x-data @click="runCommand('help')">
-        <span class="prefix"><span class="guest">guest</span><span class="at-symbol">@</span><span class="host">claudiupopa.ro</span><span class="path">:~</span></span>
-        <span id="currentCommand" class=""></span>
-    </p>
 
     <div class="overlay hidden" id="overlay"></div>
     <div id="game-of-life"></div>

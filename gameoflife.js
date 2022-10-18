@@ -4,6 +4,9 @@ let resolution = 10;
 var cols = Math.floor(window.innerWidth / resolution);
 var rows = Math.ceil(window.innerHeight / resolution);
 let startGame = false;
+let drawing = false;
+let drawn = false;
+
 
 function make2DArray(cols, rows)
 {
@@ -11,6 +14,12 @@ function make2DArray(cols, rows)
 
     for (let i = 0; i < array.length; i++) {
        array[i] = new Array(rows);
+    }
+
+    for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+            array[i][j] = 0;
+        }
     }
 
     return array
@@ -25,7 +34,6 @@ function generateRandomGrid()
         }
     }
 }
-
 
 function drawGrid(grid)
 {
@@ -43,7 +51,7 @@ function drawGrid(grid)
 
             noStroke();
 
-            rect(x, y, resolution, resolution);
+            rect(x, y, resolution - 1, resolution - 1);
         }
     }
 }
@@ -96,6 +104,12 @@ function countNeighbours(grid, x, y)
 
 function draw()
 {
+    if(drawing)
+    {
+        drawGrid(grid)
+        return;
+    }
+
     if(!startGame)
     {
         return;
@@ -113,27 +127,30 @@ function draw()
 
 document.addEventListener('startgameoflife', () => { 
     document.getElementById('overlay').classList.remove('hidden')
-    grid = make2DArray(cols, rows)
-    generateRandomGrid()
+    
+    if (!drawn) {
+        grid = make2DArray(cols, rows)
+        generateRandomGrid()
+    }
 
+    drawing = false
+    drawn = false
     startGame = true;
 })
 
 document.addEventListener('stopgameoflife', () => { 
     document.getElementById('overlay').classList.add('hidden')
     startGame = false;
+    drawn = false
+    drawing = false
     background(46, 52, 64)
 })
 
 document.addEventListener('wheel', (e) => {
 
-    if(!startGame || (resolution <= 8 && Math.sign(e.deltaY) > 0))
-    {
+    if (!startGame || (resolution <= 8 && Math.sign(e.deltaY) > 0)) {
         return;
     }
-    
-    console.log(resolution)
-    console.log(Math.sign(e.deltaY));
 
     resolution = resolution - Math.sign(e.deltaY);
     
@@ -142,4 +159,41 @@ document.addEventListener('wheel', (e) => {
 
     grid = make2DArray(cols, rows)
     generateRandomGrid()
+})
+
+document.addEventListener('drawingmap', () => {
+    if(drawing)
+    {
+        drawing = false;
+        drawn = true;
+        document.getElementById('terminal').classList.remove('hidden')
+        return
+    }
+
+    document.getElementById('terminal').classList.add('hidden')
+    drawing = true;
+    drawn = false;
+    grid = make2DArray(cols, rows)
+})
+
+document.addEventListener('mousedown', () => {
+    window.isMouseDown = true;
+})
+
+document.addEventListener('mouseup', () => {
+    window.isMouseDown = false;
+})
+
+document.addEventListener('mousemove', (e) => {
+    if (!window.isMouseDown || !drawing) {
+        return
+    }
+    
+    let x = e.clientX
+    let y = e.clientY
+
+    let i = floor((e.clientX * cols) / window.innerWidth)
+    let j = floor((e.clientY * rows) / window.innerHeight) 
+
+    grid[i][j] = 1;
 })

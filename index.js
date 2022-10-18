@@ -184,6 +184,12 @@ function specialTyping(e)
         return;
     }  
 
+    if(key === 'd' && e.ctrlKey)
+    {
+        document.dispatchEvent(new CustomEvent('drawingmap'))
+        return;
+    }  
+
     if(forbiddenKeys.includes(key))
     {
         return;
