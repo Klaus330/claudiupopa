@@ -43,7 +43,7 @@ function drawGrid(grid)
 
             noStroke();
 
-            rect(x, y, resolution - 1, resolution - 1);
+            rect(x, y, resolution, resolution);
         }
     }
 }
@@ -123,4 +123,23 @@ document.addEventListener('stopgameoflife', () => {
     document.getElementById('overlay').classList.add('hidden')
     startGame = false;
     background(46, 52, 64)
+})
+
+document.addEventListener('wheel', (e) => {
+
+    if(!startGame || (resolution <= 8 && Math.sign(e.deltaY) > 0))
+    {
+        return;
+    }
+    
+    console.log(resolution)
+    console.log(Math.sign(e.deltaY));
+
+    resolution = resolution - Math.sign(e.deltaY);
+    
+    cols = Math.floor(window.innerWidth / resolution);
+    rows = Math.ceil(window.innerHeight / resolution);
+
+    grid = make2DArray(cols, rows)
+    generateRandomGrid()
 })
