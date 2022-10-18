@@ -1,6 +1,6 @@
 
 let grid;
-let resolution = 20;
+let resolution = 10;
 var cols = Math.floor(window.innerWidth / resolution);
 var rows = Math.ceil(window.innerHeight / resolution);
 let startGame = false;
