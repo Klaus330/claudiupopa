@@ -121,13 +121,14 @@ let commands = {
     },
     history: () => historyManager.commands,
     man: (command) => {
-        let argument = command.split(' ')[1].trim()
-        console.log(argument)
+        let argument = command.split(' ')[1]
+
         if (argument === undefined)
         {
             return `Usage: man COMMAND`
         }
 
+        argument = argument.trim()
         if (data.man[argument] === undefined) {
             return `Manual for ${argument} not found.`
         }

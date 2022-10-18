@@ -131,7 +131,7 @@ a:hover{
     background-color: #D2D1E5;
 
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     right: 10px;
     border-radius: 5px;
 }
@@ -148,7 +148,7 @@ controls .controls-item
 }
 
 .controls .controls-item img:hover{
-    filter: contrast(10%)
+    filter: contrast(10%);
 }
 
 .hidden{
