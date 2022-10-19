@@ -48,6 +48,7 @@ let commands = {
     help: () => {
         return [
             '<span class="commad-name" x-data @click="runCommand(`claudiupopa`)">claudiupopa</span>    <span class="command-description">Who is Claudiu?</span>',
+            '<span class="commad-name" x-data @click="runCommand(`resume`)">resume</span>         <span class="command-description">Take a look at my resume.</span>',
             '<span class="commad-name"  x-data @click="runCommand(`whoami`)">whoami</span>         <span class="command-description">Who are you?</span>',
             '<span class="commad-name"  x-data @click="runCommand(`projects`)">projects</span>       <span class="command-description">See my projects.</span>',
             `<span class='commad-name'  x-data @click="runCommand('party')">party</span>          <span class="command-description">Let's get this party started.</span>`,
@@ -134,6 +135,13 @@ let commands = {
         }
 
         return `COMMAND: ${argument}${data.man[argument]}`
+    },
+    resume: () => {
+        setTimeout(() => {
+            window.open('./resume.pdf', '_blank');
+        }, 500)
+
+        return "Opening resume..."
     }
 }
 
