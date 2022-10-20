@@ -142,6 +142,11 @@ let commands = {
         }, 500)
 
         return "Opening resume..."
+    },
+    maddness: () => { 
+        document.dispatchEvent(new CustomEvent('maddnessModeToggle'))
+
+        return "Toggle Maddness Mode"
     }
 }
 

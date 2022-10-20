@@ -6,7 +6,9 @@ var rows = Math.ceil(window.innerHeight / resolution);
 let startGame = false;
 let drawing = false;
 let drawn = false;
+let maddnessMode = false;
 
+let colors = ['#BF616A', '#81A2C1', "#EBCB8A", "#B48EAD"]
 
 function make2DArray(cols, rows)
 {
@@ -44,9 +46,10 @@ function drawGrid(grid)
             
             if(grid[i][j] === 1)
             {
-                fill(145, 207, 225);
+                let color = maddnessMode ? colors[floor(random(4))] : '#81A2C1';
+                fill(color);
             }else{
-                fill(46, 52, 64)
+                fill('#2E3440')
             }
 
             noStroke();
@@ -217,3 +220,5 @@ document.addEventListener('mousemove', (e) => {
 
     grid[i][j] = 1;
 })
+
+document.addEventListener('maddnessModeToggle', () => maddnessMode = !maddnessMode)
