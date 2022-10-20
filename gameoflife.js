@@ -221,4 +221,4 @@ document.addEventListener('mousemove', (e) => {
     grid[i][j] = 1;
 })
 
-document.addEventListener('maddnessModeToggle', () => maddnessMode = !maddnessMode)
+document.addEventListener('madnessModeToggle', () => maddnessMode = !maddnessMode)
