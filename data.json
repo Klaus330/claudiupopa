@@ -9,6 +9,6 @@
     "party": "\n██╗     ███████╗████████╗███████╗     ██████╗  ██████╗  ██████╗  ██████╗ ██╗\n██║     ██╔════╝╚══██╔══╝██╔════╝    ██╔════╝ ██╔═══██╗██╔═══██╗██╔═══██╗██║\n██║     █████╗     ██║   ███████╗    ██║  ███╗██║   ██║██║   ██║██║   ██║██║\n██║     ██╔══╝     ██║   ╚════██║    ██║   ██║██║   ██║██║   ██║██║   ██║╚═╝\n███████╗███████╗   ██║   ███████║    ╚██████╔╝╚██████╔╝╚██████╔╝╚██████╔╝██╗\n╚══════╝╚══════╝   ╚═╝   ╚══════╝     ╚═════╝  ╚═════╝  ╚═════╝  ╚═════╝ ╚═╝",
     "tel": "0741502544",
     "man": {
-        "life":"\n-Starts the game of life John Conway's algorithm.\n-Using [ctrl+d] you can draw the initial map of the game\n-To stop the simulation use the <span class='highlight' x-data @click='runCommand(`death`)'>death</span>."
+        "life":"\n-Starts the game of life John Conway's algorithm.\n-Using [ctrl+d] you can draw the initial map of the game\n-To stop the simulation use the <span class='highlight' x-data @click='runCommand(`death`)'>death</span>.\n You can toggle the madnessMode by using the madness command."
     }
 }

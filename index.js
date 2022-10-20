@@ -60,7 +60,7 @@ let commands = {
             '<span class="commad-name"  x-data @click="runCommand(`history`)">history</span>        <span class="command-description">See your commands history</span>',
             '<span class="commad-name"  x-data @click="runCommand(`life`)">life</span>           <span class="command-description">It\'s ALIVEE!!!</span>',
             '<span class="commad-name"  x-data @click="runCommand(`death`)">death</span>          <span class="command-description">Don\'t you dare to use this command!</span>',
-            '<span class="commad-name"  x-data @click="runCommand(`manual`)">manual</span>         <span class="command-description">See the manual.</span>',
+            '<span class="commad-name"  x-data @click="runCommand(`manual`)">man</span>            <span class="command-description">See the manual.</span>',
             '<span class="commad-name"  x-data @click="runCommand(`clear`)">clear</span>          <span class="command-description">Clear the console.</span>',
             '<span class="commad-name"  x-data @click="runCommand(`exit`)">exit</span>           <span class="command-description">See ya later!</span>',
             '<span class="commad-name"">[tab]</span>          <span class="command-description">Trigger completion.</span>',
