@@ -30,7 +30,7 @@ let toggleGame = () => {
       @click="toggleGame"
     >
       <img
-        :src="`/src/assets/${isGamePaused ? 'play': 'pause'}.svg`"
+        :src="`./${isGamePaused ? 'play': 'pause'}.svg`"
         alt="Pause the game of life"
       >
     </button>

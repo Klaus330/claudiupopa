@@ -54,7 +54,7 @@
     </ul>
     <span class="block md:hidden w-8 h-8 text-blue-400 hover:text-blue-300">
       <img
-        src="@/assets/menu.svg"
+        src="./menu.svg"
         alt="Open the menu"
       >
     </span>
