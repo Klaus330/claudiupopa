@@ -8,6 +8,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "mathjs": "^11.3.1",
+    "p5": "^1.5.0",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5"
   },
