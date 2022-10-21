@@ -46,7 +46,7 @@
         >
           <img
             class="w-8 h-8"
-            src="@/assets/terminal.svg"
+            src="@/assets/images/terminal.svg"
             alt="Open the temrinal version"
           >
         </a>
@@ -54,7 +54,7 @@
     </ul>
     <span class="block md:hidden w-8 h-8 text-blue-400 hover:text-blue-300">
       <img
-        src="./menu.svg"
+        src="@/assets/images/menu.svg"
         alt="Open the menu"
       >
     </span>
