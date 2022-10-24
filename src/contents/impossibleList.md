@@ -99,8 +99,8 @@
 - Visit Romania
     - Visit Romania by van
     - Visit Romania by train
-    - ~~Visit Brasov by train~~ (Done 😀 20.08.2022 - 21.08.2022)
-    - ~~Visit Bucuresti~~ (Done 😀 1.10.2022-3.10.2022)
+    - ~~Visit Brasov by train~~ (20.08.2022 - 21.08.2022)
+    - ~~Visit Bucuresti~~ (1.10.2022-3.10.2022)
     - Visit Timisoara, Oradea, Cluj, Constanta, Sibiu, Curtea de Arges
         - Visit all 48 counties of Romania
 
