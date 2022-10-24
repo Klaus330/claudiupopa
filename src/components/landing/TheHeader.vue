@@ -19,7 +19,7 @@ let toggleGame = () => {
 
 <template>
   <header class="h-screen w-full">
-    <div class="w-full h-screen -z-10 absolute top-0 left-0">
+    <div class="w-full min-h-screen -z-10 absolute top-0 left-0">
       <TheGameOfLife ref="game" />
     </div>
     <TheNavbar class="z-10" />

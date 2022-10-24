@@ -17,10 +17,10 @@
     <ul class="md:flex justify-around items-center hidden md:gap-10">
       <li>
         <RouterLink
-          to="/work"
+          to="/projects"
           class="text-blue-400 hover:text-blue-300"
         >
-          .work()
+          .projects()
         </RouterLink>
       </li>
       <li>
@@ -33,7 +33,7 @@
       </li>
       <li>
         <RouterLink
-          to="#contact"
+          to="/contact"
           class="text-blue-400 hover:text-blue-300"
         >
           .contact()
