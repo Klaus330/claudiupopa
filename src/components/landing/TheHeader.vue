@@ -4,12 +4,17 @@ import TheGameOfLife from "./TheGameOfLife.vue";
 import { ref } from 'vue';
 
 let isGamePaused = ref(false);
+let setButtonImage = ref('pause')
 
 let game = ref(null)
 let toggleGame = () => {
   game.value.toggle()
   isGamePaused.value = !isGamePaused.value;
+
+  setButtonImage.value = isGamePaused.value ? 'play' : 'pause';
 }
+
+
 </script>
 
 <template>
@@ -30,7 +35,7 @@ let toggleGame = () => {
       @click="toggleGame"
     >
       <img
-        :src="`@assets/images/${isGamePaused ? 'play': 'pause'}.svg`"
+        :src="`/src/assets/images/${setButtonImage}.svg`"
         alt="Pause the game of life"
       >
     </button>

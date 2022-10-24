@@ -166,7 +166,6 @@
 
                 if(checkIfDeadend())
                 {
-                    console.log('hit')
                     grid = generateRandomGrid(grid)
                 }
             }
