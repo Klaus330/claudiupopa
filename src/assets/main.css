@@ -11,3 +11,12 @@
     background-color: rgb(96 165 250); 
     color: #fff; 
 }
+
+
+#markdown h2, #markdown h1{
+    @apply text-3xl font-bold my-2
+}
+
+#markdown ul {
+    @apply list-disc font-mono ml-10;
+}

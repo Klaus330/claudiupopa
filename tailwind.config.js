@@ -28,7 +28,8 @@ module.exports = {
           DEFAULT: "#BF6269"
         },
         "blackish":{
-          DEFAULT: "#2E3440"
+          DEFAULT: "#2E3440",
+          dark: '#20242c'
         }
       }
     },

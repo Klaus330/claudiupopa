@@ -25,9 +25,15 @@ let toggleGame = () => {
     <TheNavbar class="z-10" />
 
     <div class="container mx-auto -mt-20 px-5 text-5xl xl:text-8xl flex flex-col gap-y-5 h-full w-full justify-center text-white font-normal font-mono">
-      <h2>Hello,</h2>
-      <h3>I am <span class="font-bold text-blue-500">Claudiu</span>...</h3>
-      <h3>a <span class="font-light italic text-green-400">`software developer`</span></h3>
+      <h2 class="drop-shadow">
+        Hello,
+      </h2>
+      <h3 class="drop-shadow">
+        I am <span class="font-bold text-blue-500">Claudiu</span>...
+      </h3>
+      <h3 class="drop-shadow">
+        a <span class="font-light italic text-green-400">`software developer`</span>
+      </h3>
     </div>
 
     <button

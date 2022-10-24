@@ -5,5 +5,8 @@ import ContactForm from "@/components/ContactForm.vue";
 
 <template>
   <TheHeader />
+  <section class="">
+  
+  </section>
   <ContactForm class=" py-14 lg:py-64 min-h-screen "/>
 </template>
