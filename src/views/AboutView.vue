@@ -111,7 +111,7 @@ let impossibleList = html
   <section class="text-white bg-blackish-dark py-4">
     <div class="my-4 container mx-auto">
       <div class="w-full flex flex-col justify-center items-center">
-        <h2 class="text-4xl font-black drop-shadow">
+        <h2 class="text-4xl font-black drop-shadow uppercase">
           My Impossible list
         </h2>
         <p

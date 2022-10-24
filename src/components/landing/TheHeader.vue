@@ -1,7 +1,7 @@
 <script setup>
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheGameOfLife from "./TheGameOfLife.vue";
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 let isGamePaused = ref(false);
 let setButtonImage = ref('pause')
@@ -14,7 +14,43 @@ let toggleGame = () => {
   setButtonImage.value = isGamePaused.value ? 'play' : 'pause';
 }
 
+let titles = ["software developer", 'IT craftsman', "tech enthusiast"]
+let text = ref("")
+let index = 0;
+let typedTextElement = ref(null)
 
+let typeText = () => {
+  text.value = ''
+  typedTextElement.value.classList.remove("bg-white", "text-black")
+  if(index === titles.length)
+  {
+    index = 0
+  }
+  
+  let test = titles[index]
+  index++;
+
+  for (let i = 0; i < test.length; i++) {
+    setTimeout(() => {
+      text.value = text.value + test[i]
+      if(i == test.length - 1){
+        setTimeout(() => {
+          typedTextElement.value.classList.add("bg-white", "text-black")
+        },1000)
+
+        setTimeout(() => {
+          document.dispatchEvent(new CustomEvent('typetext'))
+        }, 1200)  
+      }
+    }, 350 * i)
+  }
+}
+
+document.addEventListener('typetext', typeText)
+
+onMounted(() => {
+  typeText()
+})
 </script>
 
 <template>
@@ -32,7 +68,11 @@ let toggleGame = () => {
         I am <span class="font-bold text-blue-500">Claudiu</span>...
       </h3>
       <h3 class="drop-shadow">
-        a <span class="font-light italic text-green-400">`software developer`</span>
+        a <span class="font-light italic text-green-400">`<span
+          id="typed-text"
+          ref="typedTextElement"
+          v-text="text"
+        />`</span>
       </h3>
     </div>
 
