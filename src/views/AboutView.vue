@@ -95,7 +95,7 @@ let impossibleList = html
           </li>
           <li>
             <span class="font-bold text-blueish">--resume</span> <span>Click <a
-              href="src/contents/resume.pdf"
+              href="/contents/resume.pdf"
               class="text-purpleish"
               target="_blank"
             >here</a> to see my resume</span>
