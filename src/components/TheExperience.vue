@@ -17,16 +17,16 @@ let headerChoice = Math.floor(Math.random() * 3)
           :key="index"
           :class="`border-l-8 border-${index} px-3`"
         >
-          <h3 class="text-3xl font-semibold drop-shadow-2xl">
+          <h3 class="text-lg lg:text-3xl font-semibold drop-shadow-2xl">
             <span :class="`text-${index}`">${</span> {{ item['title'] }} <span :class="`text-${index}`">}</span> <span class="text-sm text-gray-500">// {{ item["country"] }}</span>
           </h3>
           <div class="ml-3 mt-2">
-            <span class="text-xl font-semibold"><span class="text-greenish">description</span>: <span :class="`text-${index}`">{</span></span>
+            <span class="text-md lg:text-xl font-semibold"><span class="text-greenish">description</span>: <span :class="`text-${index}`">{</span></span>
             <ul class="mt-1 ml-10 flex flex-col items-start justify-start gap-y-1">
-              <li class="text-xl">
+              <li class="text-md lg:text-xl">
                 <span class="text-greenish">duration</span>: <span class="text-greenish">"</span><span class="text-blueish">{{ item['duration'] }}</span><span class="text-greenish">"</span> ,
               </li>
-              <li class="text-xl">
+              <li class="text-md lg:text-xl">
                 <span class="text-greenish">tools</span>: <span class="text-purpleish">[ </span>
                 <span
                   v-for="(tool, i) in item['tools']"
@@ -34,7 +34,7 @@ let headerChoice = Math.floor(Math.random() * 3)
                 ><span class="text-greenish">"</span><span class="text-blueish">{{ tool }}</span><span class="text-greenish">"</span><span v-if="i < item['tools'].length - 1">, </span></span>
                 <span class="text-purpleish"> ]</span>
               </li>
-              <li class="text-xl">
+              <li class="text-md lg:text-xl">
                 <span class="text-greenish">responsabilities</span>: 
                 <span v-if="!Array.isArray(item['responsabilities'])">
                   <span class="text-greenish">"</span><span class="text-blueish">{{ item["responsabilities"] }}</span><span class="text-greenish">"</span>
@@ -49,7 +49,7 @@ let headerChoice = Math.floor(Math.random() * 3)
                 </span>
               </li>
             </ul>
-            <span :class="`text-xl font-semibold text-${index}`">}</span>
+            <span :class="`text-md lg:text-xl font-semibold text-${index}`">}</span>
           </div>
         </li>
       </ul>

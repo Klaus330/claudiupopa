@@ -20,7 +20,7 @@ const closeMenu = () => {
       <h1 class="">
         <RouterLink
           to="/"
-          class="text-blueish-light hover:text-blue-300 drop-shadow-lg drop-shadow-blue-300"
+          class="text-blue-400 hover:text-blue-300 drop-shadow-lg drop-shadow-blue-300"
         >
           .claudiu()
         </RouterLink>
@@ -30,7 +30,7 @@ const closeMenu = () => {
       <li>
         <RouterLink
           to="/projects"
-          class="text-blueish-light hover:text-blue-300"
+          class="text-blue-400 hover:text-blue-300"
         >
           .projects()
         </RouterLink>
@@ -38,7 +38,7 @@ const closeMenu = () => {
       <li>
         <RouterLink
           to="/about"
-          class="text-blueish-light hover:text-blue-300"
+          class="text-blue-400 hover:text-blue-300"
         >
           .about()
         </RouterLink>
@@ -46,7 +46,7 @@ const closeMenu = () => {
       <li>
         <RouterLink
           to="/contact"
-          class="text-blueish-light hover:text-blue-300"
+          class="text-blue-400 hover:text-blue-300"
         >
           .contact()
         </RouterLink>
@@ -65,7 +65,7 @@ const closeMenu = () => {
       </li>
     </ul>
     <span
-      class="block md:hidden w-8 h-8 text-blueish-light hover:text-blue-300"
+      class="block md:hidden w-8 h-8 text-blue-400 hover:text-blue-300"
       @click="openMenu"
     >
       <img
@@ -87,32 +87,32 @@ const closeMenu = () => {
         @click="closeMenu"
       >
     </div>
-    <div class="flex flex-col items-center justify-center gap-y-10 text-4xl font-bold text-blueish-light h-full">
+    <div class="flex flex-col items-center justify-center gap-y-10 text-4xl font-bold text-blue-400 h-full">
       <RouterLink
         to="/"
-        @click="closeMenu"
         class="drop-shadow-2xl hover:text-blue-300"
+        @click="closeMenu"
       >
         .home()
       </RouterLink>
       <RouterLink
         to="/projects"
-        @click="closeMenu"
         class="drop-shadow-2xl hover:text-blue-300"
+        @click="closeMenu"
       >
         .projects()
       </RouterLink>
       <RouterLink
         to="/about"
-        @click="closeMenu"
         class="drop-shadow-2xl hover:text-blue-300"
+        @click="closeMenu"
       >
         .about()
       </RouterLink>
       <RouterLink
         to="/contact"
-        @click="closeMenu"
         class="drop-shadow-2xl hover:text-blue-300"
+        @click="closeMenu"
       >
         .contact()
       </RouterLink>
