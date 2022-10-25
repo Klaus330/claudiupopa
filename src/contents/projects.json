@@ -1,0 +1,30 @@
+{
+    "redish":{
+        "title": "Calamintha website",
+        "techs": ["HTML", "CSS", "JS"],
+        "description": "A simple website created for one of my friends.",
+        "site_link": "https://www.calamintha.com",
+        "github_link":""
+    },
+    "blueish":{
+        "title": "Terminal Version of claudiupopa.ro",
+        "techs": ["HTML", "CSS", "JS"],
+        "description": "A terminal version of the claudiupopa.ro website.",
+        "site_link": "https://term.claudiupopa.ro",
+        "github_link":"https://github.com/Klaus330/claudiupopa/tree/terminal"
+    },
+    "purpleish":{
+        "title": "'Whoops' website monitoring application",
+        "techs": ["Laravel", "Livewire", "Alpinejs", "MySQL"],
+        "description": "This was my barchelor's degree project.",
+        "site_link": "https://github.com/Klaus330/proiect-licenta",
+        "github_link":"https://github.com/Klaus330/proiect-licenta"
+    },
+    "yellowish":{
+        "title": "adasTerminal Version of claudiupopa.ro",
+        "techs": ["HTML", "CSS", "JS"],
+        "description": "A terminal version of the claudiupopa.ro website.",
+        "site_link": "https://term.claudiupopa.ro",
+        "github_link":"https://github.com/Klaus330/claudiupopa/tree/terminal"
+    }
+}
