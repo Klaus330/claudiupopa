@@ -1,8 +1,6 @@
 <script setup>
 import experience from "@/contents/experience.json";
 
-console.log(experience);
-
 let headerChoice = Math.floor(Math.random() * 3)
 </script>
 <template>

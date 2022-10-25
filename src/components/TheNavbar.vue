@@ -90,24 +90,28 @@ const closeMenu = () => {
     <div class="flex flex-col items-center justify-center gap-y-10 text-4xl font-bold text-blueish-light h-full">
       <RouterLink
         to="/"
+        @click="closeMenu"
         class="drop-shadow-2xl hover:text-blue-300"
       >
         .home()
       </RouterLink>
       <RouterLink
         to="/projects"
+        @click="closeMenu"
         class="drop-shadow-2xl hover:text-blue-300"
       >
         .projects()
       </RouterLink>
       <RouterLink
         to="/about"
+        @click="closeMenu"
         class="drop-shadow-2xl hover:text-blue-300"
       >
         .about()
       </RouterLink>
       <RouterLink
         to="/contact"
+        @click="closeMenu"
         class="drop-shadow-2xl hover:text-blue-300"
       >
         .contact()
