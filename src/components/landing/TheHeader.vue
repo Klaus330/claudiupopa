@@ -18,8 +18,9 @@ let titles = ["software developer", 'IT craftsman', "tech enthusiast"]
 let text = ref("")
 let index = 0;
 let typedTextElement = ref(null)
-
+let timeoutIds = []
 let typeText = () => {
+  timeoutIds.forEach(timeout => clearTimeout(timeout))
   text.value = ''
   typedTextElement.value.classList.remove("bg-white", "text-black")
   if(index === titles.length)
@@ -31,18 +32,18 @@ let typeText = () => {
   index++;
 
   for (let i = 0; i < test.length; i++) {
-    setTimeout(() => {
+    timeoutIds.push(setTimeout(() => {
       text.value = text.value + test[i]
       if(i == test.length - 1){
-        setTimeout(() => {
+        timeoutIds.push(setTimeout(() => {
           typedTextElement.value.classList.add("bg-white", "text-black")
-        },1000)
+        },1000))
 
-        setTimeout(() => {
+        timeoutIds.push(setTimeout(() => {
           document.dispatchEvent(new CustomEvent('typetext'))
-        }, 1200)  
+        }, 1200))
       }
-    }, 350 * i)
+    }, 350 * i))
   }
 }
 
