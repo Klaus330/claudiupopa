@@ -1,6 +1,17 @@
 <script setup>
 import { ref } from "vue"
 let isMenuOpen = ref(false);
+
+const openMenu = () => {
+  isMenuOpen.value = true;
+  document.dispatchEvent(new CustomEvent('blockScrolling'))
+}
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+  document.dispatchEvent(new CustomEvent('unblockScrolling'))
+}
+
 </script>
 
 <template>
@@ -55,7 +66,7 @@ let isMenuOpen = ref(false);
     </ul>
     <span
       class="block md:hidden w-8 h-8 text-blueish-light hover:text-blue-300"
-      @click="isMenuOpen = true"
+      @click="openMenu"
     >
       <img
         src="@/assets/images/menu.svg"
@@ -73,7 +84,7 @@ let isMenuOpen = ref(false);
         src="@/assets/images/close.svg"
         alt="close menu"
         class="pointer"
-        @click="isMenuOpen = false"
+        @click="closeMenu"
       >
     </div>
     <div class="flex flex-col items-center justify-center gap-y-10 text-4xl font-bold text-blueish-light h-full">
