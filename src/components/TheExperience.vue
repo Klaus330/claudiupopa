@@ -13,7 +13,7 @@ let headerChoice = Math.floor(Math.random() * 3)
       <span v-show="headerChoice == 2"><span class="text-yellowish">${</span><span class="text-redish"> experience </span><span class="text-yellowish">}</span></span>
     </h2>
     <div class="min-h-full py-10 w-full container mx-auto text-white flex flex-col justify-center">
-      <ul class="flex flex-col justify-center items-start gap-y-5">
+      <ul class="flex flex-col justify-center items-start gap-y-5 border-none border-blueish border-redish border-purpleish">
         <li
           v-for="(item, index) in experience"
           :key="index"
@@ -31,9 +31,9 @@ let headerChoice = Math.floor(Math.random() * 3)
               <li class="text-xl">
                 <span class="text-greenish">tools</span>: <span class="text-purpleish">[ </span>
                 <span
-                  v-for="(tool, index) in item['tools']"
-                  :key="item['title'] + index"
-                ><span class="text-greenish">"</span><span class="text-blueish">{{ tool }}</span><span class="text-greenish">"</span><span v-if="index < item['tools'].length - 1">, </span></span>
+                  v-for="(tool, i) in item['tools']"
+                  :key="item['title'] + i"
+                ><span class="text-greenish">"</span><span class="text-blueish">{{ tool }}</span><span class="text-greenish">"</span><span v-if="i < item['tools'].length - 1">, </span></span>
                 <span class="text-purpleish"> ]</span>
               </li>
               <li class="text-xl">
