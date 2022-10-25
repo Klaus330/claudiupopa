@@ -1,0 +1,31 @@
+{
+    "redish": {
+        "title": "Software Developer at eMAG",
+        "duration": "July 2022 - Present",
+        "tools": ["Symfony", "Docker", "AWS", "Linux", "MySQL"],
+        "responsabilities": "Develop and maintain the auth and user profile microservices",
+        "country": "Romania"
+    },
+    "blueish": {
+        "title": "Software Developer at Testable",
+        "duration": "July 2021 - July 2022",
+        "tools": ["Laravel", "Livewire", "AlpineJs", "Linux", "MySQL", "Tailwind", "Vanilla JS"],
+        "responsabilities": [
+            "Implement a CSV editor using vanilla JS", 
+            "Hide users sensitive data from downloadable files.",
+            "Create an user dashboard using Livewire and Alpinejs."
+        ],
+        "country": "Romania"
+    },
+    "purpleish": {
+        "title": "Web Developer at Yogalive",
+        "duration": "August 2020 - July 2021",
+        "tools": ["Vue", "MongoDB", "SASS", "Tailwind", "Nodejs"],
+        "responsabilities": [
+            "Implement the website design using Sass", 
+            "Create Vue components such as a yoga class booking form",
+            "Add all sorts of sorting and filtering options for yoga classes"
+        ],
+        "country": "Belgium"
+    }
+}
