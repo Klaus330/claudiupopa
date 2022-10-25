@@ -16,7 +16,8 @@ module.exports = {
         },
         "blueish":{
           dark: "#6c88a3",
-          DEFAULT: "#81A2C1"
+          DEFAULT: "#81A2C1",
+          light: "#4887c2"
         },
         "purpleish":{
           DEFAULT: "#B48EAC"

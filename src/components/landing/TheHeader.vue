@@ -66,7 +66,7 @@ onMounted(() => {
         Hello,
       </h2>
       <h3 class="drop-shadow">
-        I am <span class="font-bold text-blue-500">Claudiu</span>...
+        I am <span class="font-bold text-blueish-light">Claudiu</span>...
       </h3>
       <h3 class="drop-shadow">
         a <span class="font-light italic text-green-400">`<span
