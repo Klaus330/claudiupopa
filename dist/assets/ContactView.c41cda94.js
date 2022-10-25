@@ -1,0 +1,1 @@
+import{o as a,c as t,a as e,b as s,F as c,T as o,C as r}from"./index.b03faa61.js";const n={class:"bg-blackish h-full flex items-center jusitfy-center mx-auto"},u={__name:"ContactView",setup(l){return(_,m)=>(a(),t(c,null,[e(o),s("div",n,[e(r)])],64))}};export{u as default};
