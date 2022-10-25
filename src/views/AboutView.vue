@@ -51,7 +51,7 @@ let impossibleList = html
         <p class="mt-3">
           Options:
         </p>
-        <ul class="flex flex-col gap-2">
+        <ul class="flex flex-col gap-2 ml-5">
           <li>
             <span class="font-bold">--work</span> <span>Software developer at <a
               class="text-purpleish"
