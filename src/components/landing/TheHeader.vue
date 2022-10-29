@@ -14,7 +14,7 @@ let toggleGame = () => {
   setButtonImage.value = isGamePaused.value ? 'play' : 'pause';
 }
 
-let titles = ["software developer", 'IT craftsman', "tech enthusiast"]
+let titles = ["software developer", 'web craftsman', "tech enthusiast"]
 let text = ref("")
 let index = 0;
 let typedTextElement = ref(null)
