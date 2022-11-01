@@ -106,6 +106,7 @@ function setMorph(fraction) {
 
     html1.value = texts[textIndex % texts.length];
 	html2.value = texts[(textIndex + 1) % texts.length];
+
 }
 
 
