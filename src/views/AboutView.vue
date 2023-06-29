@@ -26,9 +26,11 @@ defineEmits(["openTerminal"]);
         <div
           class="absolute bottom-0 left-0 w-full h-14 bg-blue-400 flex items-center justify-center rounded"
         >
-          <span class="text-4xl font-bold lg:text-jusitfy" title="Human Version 3"
-            >HV3</span
-          >
+          <span class="text-4xl font-bold lg:text-jusitfy flex flex-col items-center justify-center" title="Human Version 3"
+            >
+            HV3
+            <span class="text-xs font-normal m-0">(Humanoid Version 3)</span>
+            </span>
         </div>
       </div>
       <p class="font-mono hidden lg:block" style="font-family: monospace">
