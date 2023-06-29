@@ -78,7 +78,7 @@ let morph2 = ref(null);
 let html1 = ref(text1);
 let html2 = ref(text2);
 
-let morphTime = 2;
+let morphTime = 2.5;
 let cooldownTime = 0.4;
 
 let time = new Date();
@@ -86,8 +86,12 @@ let morph = 0
 let cooldown = cooldownTime
 
 let animate = () => {
+    if(morph1.value === null || morph2.value === null)
+    {
+      return;
+    }
     requestAnimationFrame(animate)
-
+    
     let newTime = new Date();
     let shouldIncrementIndex = cooldown > 0;
     let dt =  (newTime - time) / 1000;
@@ -109,6 +113,10 @@ let animate = () => {
 
 
 function doMorph() {
+  if(morph1.value === null || morph2.value === null)
+  {
+    return;
+  }
 	morph -= cooldown;
 	cooldown = 0;
 	
@@ -125,7 +133,7 @@ function doMorph() {
 function setMorph(fraction) {
 	fraction = Math.cos(fraction * Math.PI) / -2 + .5;
 
-    morph2.value.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+  morph2.value.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
 	morph2.value.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 	
 	fraction = 1 - fraction;
@@ -142,7 +150,7 @@ function doCooldown() {
 	morph2.value.style.filter = "";
 	morph2.value.style.opacity = "100%";
 
-    morph1.value.style.filter = "";
+  morph1.value.style.filter = "";
 	morph1.value.style.opacity = "0%";
 }
 

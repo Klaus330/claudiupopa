@@ -11,11 +11,13 @@
     <script type="module" src="/src/main.js"></script>
     <script>
       document.addEventListener('blockScrolling', () => {
-        document.getElementById('body').classList.add('overflow-hidden')
+        console.log('block');
+        document.getElementById('body').classList.add('overflow-hidden', 'h-screen')
       })
 
       document.addEventListener('unblockScrolling', () => {
-        document.getElementById('body').classList.remove('overflow-hidden')
+        console.log('unblock');
+        document.getElementById('body').classList.remove('h-screen', 'overflow-hidden')
       })
     </script>
   </body>

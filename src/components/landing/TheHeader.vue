@@ -48,7 +48,7 @@ let typeText = () => {
 }
 
 document.addEventListener('typetext', typeText)
-
+defineEmits(['openTerminal'])
 onMounted(() => {
   typeText()
 })
@@ -59,7 +59,7 @@ onMounted(() => {
     <div class="w-full min-h-screen -z-10 absolute top-0 left-0">
       <TheGameOfLife ref="game" />
     </div>
-    <TheNavbar class="z-10" />
+    <TheNavbar class="z-10"  @open-terminal="$emit('openTerminal')"/>
 
     <div class="container mx-auto -mt-20 px-5 text-5xl xl:text-8xl flex flex-col gap-y-5 h-full w-full justify-center text-white font-normal font-mono">
       <h2 class="drop-shadow">

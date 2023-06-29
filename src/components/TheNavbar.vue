@@ -12,6 +12,7 @@ const closeMenu = () => {
   document.dispatchEvent(new CustomEvent('unblockScrolling'))
 }
 
+defineEmits(['openTerminal'])
 </script>
 
 <template>
@@ -53,8 +54,8 @@ const closeMenu = () => {
       </li>
       <li>
         <a
-          href="https://term.claudiupopa.ro"
-          target="_blank"
+          @click="$emit('openTerminal')"
+          class="cursor-pointer"
         >
           <img
             class="w-8 h-8"

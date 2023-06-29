@@ -24,6 +24,10 @@ const router = createRouter({
       path: '/projects',
       name: 'projects',
       component: ProjectView
+    },
+    {
+      path:'/:pathMatch(.*)*',
+      name: 'notfound'
     }
   ]
 })
