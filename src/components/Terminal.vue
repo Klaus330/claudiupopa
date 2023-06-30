@@ -1,7 +1,7 @@
 <template>
   <div class="absolute top-0 left-0 w-full h-full bg-blue-600 opacity-10" />
   <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-    <div class="relative text-white w-5/6 xl:w-3/5 lg:w-3/4 md:w-4/5 h-3/6 rounded-xl terminal">
+    <div class="relative text-white w-5/6 xl:w-3/5 lg:w-3/4 md:w-4/5 h-3/6 rounded-xl terminal shadow-2xl">
       <div
         class="fixed w-5/6 xl:w-3/5 lg:w-3/4 md:w-4/5 rounded-t-xl px-2 py-2 bg-gray-600 flex items-end justify-end gap-2"
       >
