@@ -9,7 +9,7 @@
         class="font-bold text-blue-400"
       >
         Claudiu Popa
-      </RouterLink> @ 2022
+      </RouterLink> @ {{(new Date()).getFullYear()}}
     </p>
   </div>
 </template>

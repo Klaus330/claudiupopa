@@ -79,7 +79,7 @@ defineEmits(["openTerminal"]);
           </li>
           <li>
             <span class="font-bold">--experience </span>
-            <span>2 years of professional experience</span>
+            <span>{{(new Date()).getFullYear() - (new Date('2020')).getFullYear()}} years of professional experience</span>
           </li>
           <li>
             <span class="font-bold">--principles </span>
@@ -111,7 +111,7 @@ defineEmits(["openTerminal"]);
               >,
               <a
                 class="text-purpleish"
-                href="mailto:claudiupopa330@gmail.comso"
+                href="mailto:claudiupopa330@gmail.com"
                 target="_blank"
                 >Email</a
               ></span
