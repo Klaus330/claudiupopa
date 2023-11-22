@@ -15,8 +15,12 @@ import projects from "@/contents/projects.json";
           :key="project.title + index"
           class="hover:border-none hover:border-purpleish hover:border-greenish hover:border-blueish hover:border-yellowish hover:border-redish"
         >
-          <div :class="`shadow-2xl py-8 px-5 border-4 border-white hover:border-${index} rounded`">
-            <div class="flex flex-col lg:flex-row items-start justify-start gap-y-2 pb-3 lg:pb-0 lg-gap-y-0 lg:items-center lg:justify-between">
+          <video no-controls autoplay loop muted class="w-full" v-if="project.video">
+            <source :src="project.video" type="video/mp4" />
+          </video>
+          <div :class="`shadow-2xl border-4 border-white hover:border-${index} rounded`">
+          
+            <div class="px-5 py-8 flex flex-col lg:flex-row items-start justify-start gap-y-2 pb-3 lg:pb-0 lg-gap-y-0 lg:items-center lg:justify-between">
               <h2 class="text-2xl font-semibold">
                 {{ project.title }}
               </h2>
@@ -51,7 +55,7 @@ import projects from "@/contents/projects.json";
                 </li>
               </ul>
             </div>
-            <div class="mt-3 flex flex-col lg:flex-row items-start justify-start gap-y-1 lg:gap-y-0 lg:items-center lg:justify-between">
+            <div class="px-5 pb-5 flex flex-col lg:flex-row items-start justify-start gap-y-1 lg:gap-y-0 lg:items-center lg:justify-between">
               <p>
                 {{ project.description }}
               </p>

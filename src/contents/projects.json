@@ -4,27 +4,31 @@
         "techs": ["HTML", "CSS", "JS"],
         "description": "A simple website created for one of my friends.",
         "site_link": "https://www.calamintha.be",
-        "github_link":""
+        "github_link":"",
+        "video": "/contents/calamintha.mp4"
     },
     "blueish":{
         "title": "Terminal Version of claudiupopa.ro",
         "techs": ["HTML", "CSS", "JS"],
         "description": "A terminal version of the claudiupopa.ro website.",
         "site_link": "https://term.claudiupopa.ro",
-        "github_link":"https://github.com/Klaus330/claudiupopa/tree/terminal"
+        "github_link":"https://github.com/Klaus330/claudiupopa/tree/terminal",
+        "video": "/contents/term2.mp4"
     },
     "purpleish":{
         "title": "'Whoops' website monitoring application",
         "techs": ["Laravel", "Livewire", "Alpinejs", "MySQL"],
         "description": "This was my barchelor's degree project.",
         "site_link": "https://github.com/Klaus330/proiect-licenta",
-        "github_link":"https://github.com/Klaus330/proiect-licenta"
+        "github_link":"https://github.com/Klaus330/proiect-licenta",
+        "video": null
     },
     "yellowish":{
         "title": "Bomberman game clone",
         "techs": ["Unity", "C#"],
         "description": "This was a college project that I had to make.",
         "site_link": "https://github.com/Klaus330/bomberman",
-        "github_link":"https://github.com/Klaus330/bomberman"
+        "github_link":"https://github.com/Klaus330/bomberman",
+        "video": null
     }
 }
