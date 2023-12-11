@@ -5,11 +5,18 @@
     <link rel="icon" href="./terminal.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Claudiu Popa - Website</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
   </head>
   <body class="bg-blackish min-h-screen" id="body">
     <div id="app" class="h-screen"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
     <script type="module" src="/src/main.js"></script>
-    <script>
+    <script defer>
+      hljs.highlightAll()
       document.addEventListener('blockScrolling', () => {
         console.log('block');
         document.getElementById('body').classList.add('overflow-hidden', 'h-screen')

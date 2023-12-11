@@ -31,3 +31,10 @@
         border-color: transparent;
     }
 }
+pre {
+    border-radius: 0.5rem;
+}
+
+code {
+    @apply rounded-xl shadow-xl;
+}

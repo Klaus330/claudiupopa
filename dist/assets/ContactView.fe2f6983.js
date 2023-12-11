@@ -1,0 +1,1 @@
+import{o as n,c as s,a,_ as o,b as r,F as m,m as i}from"./index.ad1ef776.js";const c={class:"bg-blackish h-full flex items-center jusitfy-center mx-auto"},f={__name:"ContactView",emits:["openTerminal"],setup(l){return(t,e)=>(n(),s(m,null,[a(o,{onOpenTerminal:e[0]||(e[0]=_=>t.$emit("openTerminal"))}),r("div",c,[a(i)])],64))}};export{f as default};

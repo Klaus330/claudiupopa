@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue"
+import { useRoute } from "vue-router";
 let isMenuOpen = ref(false);
 
 const openMenu = () => {
@@ -13,6 +14,8 @@ const closeMenu = () => {
 }
 
 defineEmits(['openTerminal'])
+
+let route = useRoute()
 </script>
 
 <template>
@@ -32,6 +35,7 @@ defineEmits(['openTerminal'])
         <RouterLink
           to="/projects"
           class="text-blue-400 hover:text-blue-300"
+          :class="route.name === 'projects' ? 'text-blue-300 underline' : ''"
         >
           .projects()
         </RouterLink>
@@ -40,14 +44,25 @@ defineEmits(['openTerminal'])
         <RouterLink
           to="/about"
           class="text-blue-400 hover:text-blue-300"
+          :class="route.name === 'about' ? 'text-blue-300 underline' : ''"
         >
           .about()
+        </RouterLink>
+      </li>
+       <li>
+        <RouterLink
+          to="/blog"
+          class="text-blue-400 hover:text-blue-300"
+          :class="route.name === 'blog' ? 'text-blue-300 underline' : ''"
+        >
+          .blog()
         </RouterLink>
       </li>
       <li>
         <RouterLink
           to="/contact"
           class="text-blue-400 hover:text-blue-300"
+          :class="route.name === 'contact' ? 'text-blue-300 underline' : ''"
         >
           .contact()
         </RouterLink>
