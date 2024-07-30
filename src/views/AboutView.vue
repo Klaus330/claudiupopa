@@ -40,7 +40,7 @@ defineEmits(["openTerminal"]);
     <div>
       <h2 class="text-3xl">👋 H3ll0 W0rld!</h2>
       <p class="mt-3">
-        My name is Claudiu Popa and I am a 22 year old, mostly self-taught, software
+        My name is Claudiu Popa and I am a {{ (new Date()).getFullYear() - (new Date('03-03-2000')).getFullYear() }} year old, mostly self-taught, software
         engineer, currently living in Romania. I'm passionate about software engineering,
         robotics and everything in-between. I've worked with tools such as:
         <span class="text-purpleish">[</span><span class="text-greenish">"</span

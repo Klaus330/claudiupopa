@@ -2,8 +2,8 @@
   <div class="flex justify-between flex-col items-center h-full">
     <TheNavbar @open-terminal="$emit('openTerminal')" />
 
-    <div class="flex-1 py-3 max-w-5xl mx-auto px-10 py-10 m-10">
-      <div class="bg-blue-300/10 px-10 py-5 mb-10 text-white rounded">
+    <div class="flex-1 py-3 max-w-5xl mx-auto px-10 py-10 m-10 container">
+      <div class="bg-blue-300/10 px-10 py-5 mb-10 text-white rounded" v-if="topics.length !== 0">
         <h3 class="font-semibold pb-3">--topics</h3>
         <ul class="flex flex-wrap gap-x-3">
           <li v-for="(topic, index) in topics" :key="index">
@@ -54,7 +54,17 @@
           </div>
         </div>
       </div>
+
+       <div
+          class="w-full bg-blue-600/10 px-5 py-2 rounded text-white gap-1 shadow-xl flex flex-col items-start justify-start hover:bg-gradient-to-r hover:from-blue-900 hover:to-blue-500"
+          v-if="posts.length === 0"
+        >
+          <h2 class="font-semibold text-2xl pt-3 pb-2 no-underline">
+            Comming soon...
+          </h2>
+      </div>
     </div>
+
 
     <TheFooter class="w-full" />
   </div>

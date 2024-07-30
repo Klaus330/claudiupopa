@@ -49,20 +49,27 @@ let route = useRoute()
           .about()
         </RouterLink>
       </li>
-       <li>
+      <li>
         <RouterLink
-          to="/blog"
-          class="text-blue-400 hover:text-blue-300"
-          :class="route.name === 'blog' ? 'text-blue-300 underline' : ''"
+            to="/blog"
+            class="text-blue-400 hover:text-blue-300"
+            :class="route.name === 'blog' ? 'text-blue-300 underline' : ''"
         >
           .blog()
         </RouterLink>
       </li>
       <li>
+        <a class="text-blue-400 hover:text-blue-300"
+           target="_blank"
+           href="/contents/resume.pdf">
+          .resume()
+        </a>
+      </li>
+      <li>
         <RouterLink
-          to="/contact"
-          class="text-blue-400 hover:text-blue-300"
-          :class="route.name === 'contact' ? 'text-blue-300 underline' : ''"
+            to="/contact"
+            class="text-blue-400 hover:text-blue-300"
+            :class="route.name === 'contact' ? 'text-blue-300 underline' : ''"
         >
           .contact()
         </RouterLink>
@@ -119,16 +126,28 @@ let route = useRoute()
         .projects()
       </RouterLink>
       <RouterLink
-        to="/about"
-        class="drop-shadow-2xl hover:text-blue-300"
-        @click="closeMenu"
+          to="/about"
+          class="drop-shadow-2xl hover:text-blue-300"
+          @click="closeMenu"
       >
         .about()
       </RouterLink>
       <RouterLink
-        to="/contact"
-        class="drop-shadow-2xl hover:text-blue-300"
-        @click="closeMenu"
+          to="/blog"
+          class="text-blue-400 hover:text-blue-300"
+          :class="route.name === 'blog' ? 'text-blue-300 underline' : ''"
+      >
+        .blog()
+      </RouterLink>
+      <a class="text-blue-400 hover:text-blue-300"
+         target="_blank"
+         href="/contents/resume.pdf">
+        .resume()
+      </a>
+      <RouterLink
+          to="/contact"
+          class="drop-shadow-2xl hover:text-blue-300"
+          @click="closeMenu"
       >
         .contact()
       </RouterLink>

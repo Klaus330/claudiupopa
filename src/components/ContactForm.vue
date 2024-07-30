@@ -15,7 +15,7 @@
         <ContactMorph />
       </div>
       <div class="lg:p-5 container mx-auto">
-        <form>
+        <form data-netlify="true" name="contact" method="POST">
           <div class="flex justify-between w-full gap-3">
             <div class="w-full">
               <input

@@ -75,6 +75,7 @@
 - Climb to peak Omu
 - Bike across Romania/Belgium
 - Break a world record
+~~- Go karting~~
 - Read an entire book in spanish
 - ~~Do a citybreak~~ (Brasov 2022)
     - Do another one

@@ -1,32 +1,26 @@
 ---
-title: Some very very very very very long title
+title: Inject ssh agent in Dockerfile
 thumbnail: https://images.unsplash.com/photo-1526779259212-939e64788e3c?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 author: Claudiu Popa
-publishedAt: 2023-02-12
+publishedAt: 2024-02-18
 tags:
   - "docker"
   - "linux"
-  - "php"
+  - "jenkins"
 ---
 
-Lorem ipsum dolor sit amet consectetur **adipisicing** elit. Facere quis possimus eligendi architecto unde, saepe natus fugit tempora velit est esse beatae,aperiam nemo ullam aut! Commodi eligendi ut quibusdam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quis possimus eligendi architecto unde, saepe natus fugit tempora velit est esse beatae, aperiam nemo ullam aut! Commodi eligendi ut quibusdam.
+Let's imagine you have to build a docker image for a project and the project it is using a private package from your company
+that is protected by ssh access. How would approach this challenge? 
+
+Well, there are two ways of doing this and we will explore them in this article. 
+
+## First approach
+
+We can for example to build the image having all the project files in it. This way you'll not have to worry about installing
+all the packages before running the docker container. In order to do this, you need a way to inject your current ssh agent that has access to your company's repositories into your Dockerfile where you'll, for example have something like this: 
 
 ```php
-class Test {
-    private string readonly $name = "test";
-    private const SOMETHING = 1;
-
-    public function test() { 
-        return 'new';
-    }
-}
+RUN composer install --no-scripts --no-interaction
 ```
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quis possimus eligendi architecto unde, saepe natus fugit tempora velit est esse beatae,aperiam nemo ullam aut! Commodi eligendi ut quibusdam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quis possimus eligendi architecto unde, saepe natus fugit tempora velit est esse beatae, aperiam nemo ullam aut! Commodi eligendi ut quibusdam.
 
-```json
-[
-    "docker",
-    "linux"
-]
-```
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quis possimus eligendi architecto unde, saepe natus fugit tempora velit est esse beatae,aperiam nemo ullam aut! Commodi eligendi ut quibusdam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quis possimus eligendi architecto unde, saepe natus fugit tempora velit est esse beatae, aperiam nemo ullam aut! Commodi eligendi ut quibusdam.
+Luckily for us in the new versions of docker starting with Docker 18.09 and higher, we are able to use the <mark>--ssh</mark>  flag 
